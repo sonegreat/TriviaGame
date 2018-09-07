@@ -1,3 +1,20 @@
+
+var time=15;
+var interval = setInterval(function(){
+    document.getElementById("time").innerHTML=time;
+    time--;
+    if (time ===0){
+        clearInterval(interval);
+        document.getElementById("time").innerHTML="times up";
+        submitAnswer();
+    }
+
+},
+1000
+);
+
+
+
 var submitAnswer = function() {
    var questions = [document.getElementById("q1"),
                     document.getElementById("q2"),
@@ -10,7 +27,9 @@ var submitAnswer = function() {
     var correct=0;
     var incorrect=0;
     var msg = document.getElementById("result").innerHTML;
-    var time=30;
+    
+
+    
 
     console.log(questions);
 
